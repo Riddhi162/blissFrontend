@@ -1,0 +1,44 @@
+[
+  
+      {
+        "id": 1,
+        "image": "../../assests/slider1.jpg",
+        "industry": "Technology",
+        "name": "John Doe",
+        "title": "Innovative Tech Solutions in 2024",
+        "description": "Exploring cutting-edge technologies transforming the digital landscape",
+        "details": [
+          {
+            "subtitle": "AI Revolution",
+            "subdetails": "Artificial Intelligence is reshaping industries with unprecedented capabilities."
+          },
+          {
+            "subtitle": "Cloud Computing Trends",
+            "subdetails": "The future of enterprise technology lies in advanced cloud infrastructure."
+          }
+        ],
+        "date": "March 15, 2024",
+        "language": "English"
+      },
+      {
+        "id": 2,
+        "image": "../../assests/slider1.jpg", 
+        "industry": "Real Estate",
+        "name": "Sarah Johnson",
+        "title": "Medical Innovations Changing Patient Care",
+        "description": "Breakthrough technologies improving healthcare delivery",
+        "details": [
+          {
+            "subtitle": "Telemedicine Advances",
+            "subdetails": "Remote healthcare solutions are making medical access more convenient."
+          },
+          {
+            "subtitle": "Precision Medicine",
+            "subdetails": "Personalized treatment approaches are revolutionizing patient outcomes."
+          }
+        ],
+        "date": "February 20, 2024",
+        "language": "Spanish"
+      }
+    
+  ]

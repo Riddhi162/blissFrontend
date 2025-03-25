@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Emphasizes the importance of continuous learning and intellectual",
+    "image": "../../assests/slider1.jpg",
+    "date": "June 9, 2024",
+    "category": "Property",
+    "details": "Relar Residence promotes sustainable transportation options, with dedicated spaces. Welcome to Realar Residence, where sustainability meets comfort in every corner. In this blog post, we'll explore the green innovations seamlessly integrated into the fabric of EcoLand, creating a unique...",
+    "author": "Realar",
+    "language": "English"
+  },
+  {
+    "id": 2,
+    "title": "Modern Housing Solutions for Urban Areas",
+    "image": "../../assests/slider1.jpg",
+    "date": "May 15, 2024",
+    "category": "Modern Houses",
+    "details": "Exploring contemporary housing solutions designed for urban environments, with a focus on maximizing space and minimizing environmental impact...",
+    "author": "Admin",
+    "language": "Roman"
+  },
+  {
+    "id": 3,
+    "title": "Apartment Living in 2024",
+    "image": "../../assests/slider1.jpg",
+    "date": "April 22, 2024",
+    "category": "Apartment",
+    "details": "Discover the latest trends in apartment design and functionality, making the most of limited space while ensuring comfort and style...",
+    "author": "Admin",
+    "language": "German"
+  },
+  {
+    "id": 4,
+    "title": "Banglow Designs for Suburban Living",
+    "image": "../../assests/slider1.jpg",
+    "date": "March 10, 2024",
+    "category": "Banglow",
+    "details": "Explore beautiful banglow designs that combine traditional charm with modern amenities, perfect for comfortable suburban living...",
+    "author": "Admin",
+    "language": "English"
+  },
+  {
+    "id": 5,
+    "title": "Real Estate Market Trends 2024",
+    "image": "../../assests/slider1.jpg",
+    "date": "February 28, 2024",
+    "category": "Real Estate",
+    "details": "Analysis of current market trends and predictions for the real estate sector in the coming year, with insights for buyers and sellers alike...",
+    "author": "Admin",
+    "language": "English"
+  }
+]

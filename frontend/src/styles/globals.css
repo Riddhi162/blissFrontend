@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary-darkest: #1c2d37;
+  --color-primary-darker: #a4b5ba;
+  --color-primary-main: #d9d9d9;
+  --color-primary-lighter: #fbd0a8;
+  --color-primary-accent: #e5cb6b;
+}
+#f79742 orange
+#fef0e4 skin
+#01001a   dark blue
+#979797 gray
+#faf8f4
+
+
+
+/* rgb(43, 45, 66);
+  --color-primary-darker: #8D99AE;
+  --color-primary-main: #EDF2F4;
+  --color-primary-lighter: #EF233C;
+  --color-primary-accent: #D90429; */
+
+/* Custom utility classes for our color system */
+@layer utilities {
+  .bg-primary-darkest {
+    background-color: var(--color-primary-darkest);
+  }
+  .bg-primary-darker {
+    background-color: var(--color-primary-darker);
+  }
+  .bg-primary-main {
+    background-color: var(--color-primary-main);
+  }
+  .bg-primary-lighter {
+    background-color: var(--color-primary-lighter);
+  }
+  .bg-primary-accent {
+    background-color: var(--color-primary-accent);
+  }
+
+  .text-primary-darkest {
+    color: var(--color-primary-darkest);
+  }
+  .text-primary-darker {
+    color: var(--color-primary-darker);
+  }
+  .text-primary-main {
+    color: var(--color-primary-main);
+  }
+  .text-primary-lighter {
+    color: var(--color-primary-lighter);
+  }
+  .text-primary-accent {
+    color: var(--color-primary-accent);
+  }
+} 
