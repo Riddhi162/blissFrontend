@@ -1,132 +1,82 @@
 import React, { useState, useEffect } from 'react'
+import { X } from 'react-feather'
 import Navbar from '../../components/Navbar/Navbar'
 import HeroSection from '../../components/HeroSection/HeroSection'
 import MarketPlace from '../../components/MarketPlace/MarketPlace'
 import Services from '../../components/Services/Services'
 import Partners from '../../components/Partners/Partners'
 import WhyUs from '../../components/WhyUs/WhyUs'
-import Events from '../../components/Events/Events'
 import Library from '../../components/Library/Library'
 import NewsBlog from '../../components/NewsBlog/NewsBlog'
-import Footer from '../../components/Footer/Footer'
-import { motion } from 'framer-motion'
+import contactImage from "../../../assests/slider1.jpg"
+
+const WelcomeModal = ({ onClose }) => {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-lg">
+      <div className="relative w-11/12 max-w-4xl p-4">
+        <div className="bg-white/30 backdrop-blur-lg border-4 border-white/20 rounded-2xl shadow-2xl overflow-hidden grid grid-cols-2 max-h-[600px]">
+          {/* Close Button */}
+          <button 
+            onClick={onClose}
+            className="absolute top-4 right-4 z-10 text-primary-darkest bg-white/20 hover:bg-white/40 rounded-full p-2 transition-all duration-300"
+          >
+            <X size={24} />
+          </button>
+
+          {/* Text Content */}
+          <div className="p-6 flex flex-col justify-center text-primary-darkest overflow-y-auto">
+            <h2 className="text-3xl font-bold mb-4">
+              Welcome to Bliss Consulting
+            </h2>
+            <p className="text-sm mb-3 leading-relaxed">
+              At Bliss Consulting, we are more than just a consulting firm – we are your strategic partners in navigating the complex landscape of modern business. Our team of expert consultants brings together cutting-edge strategies, innovative thinking, and deep industry insights to transform your challenges into remarkable opportunities.
+            </p>
+            <p className="text-sm mb-4 leading-relaxed">
+              We pride ourselves on delivering tailored solutions that are not just effective, but transformative. Whether you're a startup looking to disrupt the market or an established enterprise seeking to optimize your operations, our comprehensive approach ensures that we meet your unique business needs with precision and creativity.
+            </p>
+            <div>
+              <button 
+                onClick={onClose}
+                className="bg-primary-accent text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 text-sm"
+              >
+                Explore Our Services
+              </button>
+            </div>
+          </div>
+
+          {/* Image Container */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-darkest/20 to-primary-accent/20 opacity-50"></div>
+            <img 
+              src={contactImage}
+              alt="Bliss Consulting" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const HomePage = () => {
-  const [isRevealed, setIsRevealed] = useState(true);
-  const logoText = "BLISS CONSULTING";
+  const [showWelcomeModal, setShowWelcomeModal] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsRevealed(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.1
-      }
-    }
+  const handleCloseModal = () => {
+    setShowWelcomeModal(false);
   };
-
-  const letterVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-      rotate: -20
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotate: 0,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 10
-      }
-    }
-  };
-
-  if (isRevealed) {
-    return (
-      <div className="relative min-h-screen bg-primary-darkest flex items-center justify-center overflow-hidden">
-        {/* Top Right Grid Texture */}
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-bl from-transparent to-primary-accent/10 grid grid-cols-8 grid-rows-8 gap-1">
-            {[...Array(64)].map((_, index) => (
-              <div
-                key={index}
-                className="bg-primary-accent/5 border-[0.5px] border-primary-accent/10"
-              />
-            ))}
-          </div>
-        </div>
-        
-        {/* Bottom Left Grid Texture */}
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent to-primary-accent/10 grid grid-cols-8 grid-rows-8 gap-1">
-            {[...Array(64)].map((_, index) => (
-              <div
-                key={index}
-                className="bg-primary-accent/5 border-[0.5px] border-primary-accent/10"
-              />
-            ))}
-          </div>
-        </div>
-        
-        {/* Logo Container */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-          className="flex items-center z-10 relative"
-        >
-          {logoText.split('').map((letter, index) => (
-            <motion.span
-              key={index}
-              variants={letterVariants}
-              className="text-primary-accent text-8xl font-bold"
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </motion.div>
-        
-        {/* Subtle Background Shimmer */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: [0, 0.05, 0],
-            backgroundPosition: ['0% 0%', '100% 100%', '0% 0%']
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            repeatType: "loop"
-          }}
-          className="absolute inset-0 bg-gradient-to-br from-transparent via-primary-accent/5 to-transparent"
-        />
-      </div>
-    );
-  }
 
   return (
-   // Change this line in your return statement
-<div className="min-h-screen overflow-x-hidden">
-     
+    <div className="min-h-screen overflow-x-hidden">
+      {/* Welcome Modal - Conditionally Rendered */}
+      {showWelcomeModal && <WelcomeModal onClose={handleCloseModal} />}
+      
       <main>
-      <Navbar />
+        <Navbar />
         <HeroSection />
         <Services />
         <WhyUs />
         <MarketPlace />
-        
-        {/* <Events /> */}
         <Library />
         <NewsBlog />
         <Partners />
@@ -135,4 +85,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default HomePage 

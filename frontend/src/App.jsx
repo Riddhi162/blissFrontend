@@ -1,14 +1,25 @@
 import React, { Suspense, lazy } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Footer from "./components/Footer/Footer.jsx"
+
+// Scroll to top component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 // Lazy load pages to improve initial load performance
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'))
 const Contact = lazy(() => import("./pages/Contact.jsx"))
 const About = lazy(() => import('./pages/About.jsx'))
 const Service = lazy(() => import("./pages/ServicePage.jsx"))
-const Partners = lazy(() => import("./pages/Partners.jsx"))
+const Partners = lazy(() => import('./pages/Partners.jsx'))
 const Library = lazy(() => import('./pages/Library.jsx'))
 const Markets = lazy(() => import('./pages/Markets.jsx'))
 const News = lazy(() => import('./pages/News.jsx'))
@@ -28,6 +39,7 @@ const LoadingFallback = () => <div>Loading...</div>
 function App() {
   return (
     <Router>
+      <ScrollToTop /> {/* Add this line to enable scroll restoration */}
       <Navbar />
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
